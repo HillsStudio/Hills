@@ -590,47 +590,106 @@ function Pricing() {
   ];
 
   const campaigns = [
-    {
-      name: 'Editing Starter',
-      price: '₹15,000',
-      per: '/ Month',
-      highlight: false,
-      icon: <Scissors className="w-6 h-6" />,
-      features: ['10 Reels Editing', 'Captions', 'Basic Motion Graphics'],
-    },
-    {
-      name: 'Content Starter',
-      price: '₹25,000',
-      per: '/ Month',
-      highlight: false,
-      icon: <Camera className="w-6 h-6" />,
-      features: ['10 Reels', 'Shooting + Editing', 'Content Planning'],
-    },
-    {
-      name: 'Growth Campaign',
-      price: '₹50,000',
-      per: '/ Month',
-      highlight: true,
-      icon: <Rocket className="w-6 h-6" />,
-      features: ['20 Reels', 'Shooting + Editing', 'Script Assistance', 'Content Planning'],
-    },
-    {
-      name: 'Scale Campaign',
-      price: '₹75,000',
-      per: '/ Month',
-      highlight: false,
-      icon: <TrendingUp className="w-6 h-6" />,
-      features: ['30 Reels', 'Shooting + Editing', 'Script Writing', 'Content Planning', 'Priority Support'],
-    },
-    {
-      name: 'Premium Brand',
-      price: '₹90,000',
-      per: '/ Month',
-      highlight: false,
-      icon: <Crown className="w-6 h-6" />,
-      features: ['30 Reels', 'Premium Shoots', 'Premium Editing', 'Script Writing', 'Content Strategy', 'Dedicated Support'],
-    },
-  ];
+{
+name: 'Editing Starter',
+price: '₹15,000',
+per: '/ Month',
+icon: <Scissors className="w-6 h-6" />,
+features: [
+'10 Reels Editing Only',
+'1 Feed Post Daily',
+'1 Story Daily',
+'Professional Video Editing',
+'Captions & Subtitles',
+'Basic Motion Graphics',
+'Trending Transitions',
+'Royalty-Free Music',
+],
+},
+{
+name: 'Content Starter',
+price: '₹25,000',
+per: '/ Month',
+badge: 'popular',
+icon: <Camera className="w-6 h-6" />,
+features: [
+'10 Reels with Influencer (Shoot + Edit)',
+'5 Reels Editing Only',
+'1 Feed Post Daily',
+'1 Story Daily',
+'Content Planning',
+'Shot List Assistance',
+'Captions & Hashtag Suggestions',
+'Trending Audio Research',
+'Basic Motion Graphics',
+'Monthly Content Consultation',
+],
+},
+{
+name: 'Growth Campaign',
+price: '₹50,000',
+badge: 'recommended',
+per: '/ Month',
+highlight: false,
+icon: <Rocket className="w-6 h-6" />,
+features: [
+'20 Reels with Influencer (Shoot + Edit)',
+'5 Reels Editing Only',
+'1 Feed Post Daily',
+'1 Story Daily',
+'Content Planning',
+'Script Assistance',
+'Professional Color Grading',
+'Captions & Hashtag Strategy',
+'Trending Content Research',
+'Priority Delivery',
+'Monthly Performance Review',
+],
+},
+{
+name: 'Scale Campaign',
+price: '₹75,000',
+per: '/ Month',
+icon: <TrendingUp className="w-6 h-6" />,
+features: [
+'30 Reels with Influencer (Shoot + Edit)',
+'5 Reels Editing Only',
+'1 Feed Post Daily',
+'1 Story Daily',
+'Advanced Script Writing',
+'Content Planning & Calendar',
+'Professional Color Grading',
+'Advanced Motion Graphics',
+'Brand-Focused Content Strategy',
+'Priority Support',
+'Fast Turnaround Time',
+'Monthly Strategy Call',
+],
+},
+{
+name: 'Premium Brand',
+price: '₹90,000',
+per: '/ Month',
+icon: <Crown className="w-6 h-6" />,
+features: [
+'30 Reels with Influencer (Shoot + Edit)',
+'10 Reels Editing Only',
+'1 Feed Post Daily',
+'1 Story Daily',
+'Premium Cinematic Editing',
+'Premium Content Shoots',
+'Advanced Script Writing',
+'Dedicated Content Strategy',
+'Content Calendar Management',
+'Advanced Motion Graphics',
+'Priority Delivery',
+'Dedicated Support',
+'Monthly Growth Consultation',
+'Brand Building Strategy',
+],
+},
+];
+
 
   const tabs = [
     { key: 'campaigns', label: 'Monthly Campaigns', icon: <Rocket className="w-4 h-4" /> },
@@ -728,17 +787,25 @@ function Pricing() {
                     initial={{ opacity: 0, y: 40, scale: 0.93 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ delay: i * 0.1, type: 'spring' }}
-                    className={`relative rounded-2xl p-6 flex flex-col transition-all duration-500 ${
-                      pkg.highlight
-                        ? 'bg-gradient-to-br from-[#00E5FF]/15 to-[#7C3AED]/15 border border-[#00E5FF]/40 glow-blue'
-                        : 'glass hover:glow-purple'
-                    }`}
+                  className={`relative rounded-2xl p-6 flex flex-col transition-all duration-500 ${
+                    pkg.badge === 'popular'
+                      ? 'bg-gradient-to-br from-[#00E5FF]/15 to-[#7C3AED]/15 border border-[#00E5FF]/40 glow-blue'
+                      : pkg.badge === 'recommended'
+                      ? 'bg-gradient-to-br from-[#F59E0B]/15 to-[#EF4444]/15 border border-[#F59E0B]/40'
+                      : 'glass hover:glow-purple'
+                  }`}
                   >
-                    {pkg.highlight && (
-                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#00E5FF] to-[#7C3AED] rounded-full text-xs font-bold whitespace-nowrap">
-                        Most Popular
-                      </div>
-                    )}
+                  {pkg.badge && (
+                    <div
+                      className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap ${
+                        pkg.badge === 'popular'
+                          ? 'bg-gradient-to-r from-[#00E5FF] to-[#7C3AED] text-white'
+                          : 'bg-gradient-to-r from-[#F59E0B] to-[#EF4444] text-white'
+                      }`}
+                    >
+                      {pkg.badge === 'popular' ? 'Most Popular' : 'Best Results'}
+                    </div>
+                  )}
 
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${pkg.highlight ? 'bg-[#00E5FF]/20 text-[#00E5FF]' : 'bg-white/10 text-gray-300'}`}>
                       {pkg.icon}
@@ -764,10 +831,12 @@ function Pricing() {
                     <motion.a
                       href="#contact"
                       className={`w-full py-3 rounded-xl text-sm font-semibold text-center transition-all ${
-                        pkg.highlight
-                          ? 'bg-gradient-to-r from-[#00E5FF] to-[#7C3AED] text-white'
-                          : 'border border-white/20 text-white hover:bg-white/10'
-                      }`}
+                      pkg.badge === 'popular'
+                        ? 'bg-gradient-to-r from-[#00E5FF] to-[#7C3AED] text-white'
+                        : pkg.badge === 'recommended'
+                        ? 'bg-gradient-to-r from-[#F59E0B] to-[#EF4444] text-white'
+                        : 'border border-white/20 text-white hover:bg-white/10'
+                    }`}
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
                     >
