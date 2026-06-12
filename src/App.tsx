@@ -42,7 +42,7 @@ function MouseGlow({ x, y }: { x: number; y: number }) {
       className="pointer-events-none fixed w-[500px] h-[500px] rounded-full opacity-20 blur-3xl z-0"
       style={{
         background: 'radial-gradient(circle, #00E5FF 0%, #7C3AED 50%, transparent 70%)',
-        transform: `translate(${x - 950}px, ${y - 480}px)`,
+        transform: `translate(${x - 800}px, ${y - 400}px)`,
         transition: 'transform 0.1s ease-out',
       }}
     />
