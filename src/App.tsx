@@ -584,8 +584,8 @@ function Pricing() {
   ];
 
   const shootingTiers = [
-    { name: 'Basic Shoot + Edit', price: '₹2,500', per: '/ Reel', desc: 'Location shoot with basic editing' },
-    { name: 'Premium Shoot + Edit', price: '₹5,000', per: '/ Reel', desc: 'Professional setup with premium post-production' },
+    { name: 'Basic Shoot + Edit', price: '₹3,500', per: '/ Reel', desc: 'Location shoot with basic editing' },
+    { name: 'Premium Shoot + Edit', price: '₹5,500', per: '/ Reel', desc: 'Professional setup with premium post-production' },
     { name: 'Commercial Shoot + Edit', price: '₹10,000+', per: '/ Reel', desc: 'Full commercial-grade production' },
   ];
 
@@ -608,7 +608,7 @@ features: [
 },
 {
 name: 'Content Starter',
-price: '₹25,000',
+price: '₹35,000',
 per: '/ Month',
 badge: 'popular',
 icon: <Camera className="w-6 h-6" />,
@@ -627,13 +627,13 @@ features: [
 },
 {
 name: 'Growth Campaign',
-price: '₹50,000',
+price: '₹55,000',
 badge: 'recommended',
 per: '/ Month',
 highlight: false,
 icon: <Rocket className="w-6 h-6" />,
 features: [
-'20 Reels with Influencer (Shoot + Edit)',
+'10 Reels with Influencer (Shoot + Edit)',
 '5 Reels Editing Only',
 '1 Feed Post Daily',
 '1 Story Daily',
@@ -652,7 +652,7 @@ price: '₹75,000',
 per: '/ Month',
 icon: <TrendingUp className="w-6 h-6" />,
 features: [
-'30 Reels with Influencer (Shoot + Edit)',
+'15 Reels with Influencer (Shoot + Edit)',
 '5 Reels Editing Only',
 '1 Feed Post Daily',
 '1 Story Daily',
@@ -672,7 +672,7 @@ price: '₹90,000',
 per: '/ Month',
 icon: <Crown className="w-6 h-6" />,
 features: [
-'30 Reels with Influencer (Shoot + Edit)',
+'20 Reels with Influencer (Shoot + Edit)',
 '10 Reels Editing Only',
 '1 Feed Post Daily',
 '1 Story Daily',
